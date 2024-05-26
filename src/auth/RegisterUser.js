@@ -1,4 +1,5 @@
 import http from "k6/http"
+import { BaseUrl } from "./BaseUrl.js"
 
 const registerData = JSON.stringify({
     firstName : "usera",
@@ -6,9 +7,9 @@ const registerData = JSON.stringify({
     age : 90
 })
 
-const urlEnd = "http://dummyjson.com/users/add"
+const urlEnd =  BaseUrl + "/users/add"
 
-export function PostUser(){
+export function RegisterUser(){
     http.post(urlEnd,registerData,{
         headers: { 'Content-Type': 'application/json' }
     })

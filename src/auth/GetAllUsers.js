@@ -1,7 +1,8 @@
 import http from "k6/http"
+import { BaseUrl } from "./BaseUrl.js"
 
-const urlEnd = 'http://dummyjson.com/users'
+const urlEnd = BaseUrl + '/users'
 
-export function getUsers() {
+export function GetAllUsers() {
     http.get(urlEnd)
 }
