@@ -8,20 +8,8 @@ const registerData = JSON.stringify({
 
 const urlEnd = "http://dummyjson.com/users/add"
 
-export const options = {
-    // user dengan pengguna statis
-    vus: 30,
-    // durasi secara statis
-    duration: '30s',
-};
-  
-
-export function RegisterUser(){
+export function PostUser(){
     http.post(urlEnd,registerData,{
         headers: { 'Content-Type': 'application/json' }
     })
-}
-
-export default function() {
-    RegisterUser()
 }
