@@ -1,5 +1,6 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
+import { RegisterUser } from './auth/RegisterUser';
 
 export const options = {
   // // user dengan pengguna statis
@@ -23,6 +24,7 @@ export const options = {
 
 //skenario testing
 export default function() {
-  http.get('https://test.k6.io');
+  RegisterUser()
+  // http.get('https://test.k6.io');
   // sleep(1); //sebelum berhenti, tunggu selama 1 detik
 }

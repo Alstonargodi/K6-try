@@ -1,5 +1,9 @@
 https://k6.io/docs/get-started/running-k6/
 
+> api for testing
+https://dummyjson.com/docs/users#users-add
+
+
 ###library
 
 > npm install --save-dev @types/k6
