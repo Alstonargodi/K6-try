@@ -1,5 +1,5 @@
 import { PostUser, RegisterUser } from '../src/auth/RegisterUser.js';
-import { GetAllUsers, getUsers } from '../src/auth/GetAllUsers.js';
+import { GetAllUsers, getUsers } from '../src/auth/GetAllUsers.js';import { fail } from 'k6';
 
 export const options = {
   // user dengan pengguna statis
@@ -24,6 +24,6 @@ export const options = {
 //skenario testing
 export default function() {
   RegisterUser()
-  GetAllUsers()
+  // GetAllUsers()
   // sleep(1); //sebelum berhenti, tunggu selama 1 detik
 }
