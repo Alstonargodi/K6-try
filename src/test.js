@@ -24,6 +24,6 @@ export const options = {
 //skenario testing
 export default function() {
   RegisterUser()
-  GetAllUsers()
+  // GetAllUsers()
   // sleep(1); //sebelum berhenti, tunggu selama 1 detik
 }
