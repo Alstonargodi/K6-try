@@ -1,12 +1,16 @@
 import http from "k6/http";
 import { check, sleep } from 'k6';
+import { getHomePage } from "./front/HomePage.js";
 
 export const baseUrl = "https://test-api.k6.io/public/crocodiles/"
 
 export const options = {
-    stages:[
-        { duration: '10s', target: 10 },
-    ],
+    stages : [
+        {
+            duration: '10s',
+            vus: 10
+        }
+    ]
 } 
 
 export const params = {
@@ -23,9 +27,14 @@ const payload = JSON.stringify({
 })
 
 
+// export default function (){
+//     const response = http.post(baseUrl,payload,params)
+//     check(response,{'status 200':(r)=> console.log(r)})
+//     // check(response,{'status 200': (r) => r.status == 200})
+//     // sleep(1)
+// }
+
 export default function (){
-    const response = http.post(baseUrl,payload,params)
-    check(response,{'status 200':(r)=> console.log(r)})
-    // check(response,{'status 200': (r) => r.status == 200})
-    // sleep(1)
+    getHomePage()
+    sleep(2)
 }
